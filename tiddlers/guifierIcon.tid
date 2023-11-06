@@ -1,0 +1,32 @@
+caption: {{$:/plugins/maliknajjar/guifier/guifierSvgIcon}} <$text text="new diagram" />
+created: 20231026125726572
+description: <$text text="Create a new draw.io diagram tiddler" />
+hint: <$text text="Create a new draw.io diagram tiddler" />
+modified: 20231026125746994
+tags: $:/tags/PageControls $:/tags/ViewToolbar
+title: $:/plugins/maliknajjar/guifier/guifier-icon
+type: text/vnd.tiddlywiki
+
+\whitespace trim
+
+\define createDiagram()
+<$action-createtiddler $basetitle={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[图表]else[Diagram]] }}} type="application/vnd.drawio" >
+<$action-sendmessage $message="tm-edit-tiddler" $parevenoddam=<<createTiddler-title>>/>
+</$action-createtiddler>
+\end
+
+\define drawioButton()
+\whitespace trim
+<$button tooltip="Create a new draw.io diagram tiddler" aria-label={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[新建图表]else[new diagram]] }}} class=<<tv-config-toolbar-class>> actions=<<createDiagram>> >
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">
+{{$:/plugins/maliknajjar/guifier/guifierSvgIcon}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]">
+<span class="tc-btn-text">
+<$text text={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[新建图表]else[new diagram]] }}} />
+</span>
+</$list>
+</$button>
+\end
+
+<<drawioButton>>

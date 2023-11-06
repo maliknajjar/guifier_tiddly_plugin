@@ -1,0 +1,11 @@
+{
+	"title": "$:/plugins/maliknajjar/guifier",
+	"name": "Guifier",
+    "description": "This is the Testing plugin mate",
+	"author": "maliknajjar",
+	"version": "0.0.1",
+	"core-version": ">=5.0.0",
+	"source": "https://tiddlywiki.com/testing",
+	"plugin-type": "plugin",
+	"list": "readme license"
+}
